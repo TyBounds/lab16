@@ -53,17 +53,24 @@ class myApp(object):
         drawpad.after(5,self.animate)
 
     def key(self,event):
+        x1,y1,x2,y2 = drawpad.coords(player)
         global player
-        if event.char == "w":
+        if event.char == "w" and y1 > 0:
             drawpad.move(player,0,-4)
-        elif event.char =="s":
+        elif event.char =="s"and y2 < 600:
             drawpad.move(player,0,4)
-        elif event.char =="a":
+        elif event.char =="a" and x1 > 0:
             drawpad.move(player,-4,0)
-        elif event.char =="d":
+        elif event.char =="d" and x2 < 800:
             drawpad.move(player,4,0)
             
-            
+    def boundries(self):
+        global drawpad
+        global player
+        global direction
+       
+        if x2 > 800:
+            drawpad.move(player,-400,0)
 
 
                         
