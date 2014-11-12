@@ -63,14 +63,6 @@ class myApp(object):
             drawpad.move(player,-4,0)
         elif event.char =="d" and x2 < 800:
             drawpad.move(player,4,0)
-            
-    def boundries(self):
-        global drawpad
-        global player
-        global direction
-       
-        if x2 > 800:
-            drawpad.move(player,-400,0)
 
 
                         
